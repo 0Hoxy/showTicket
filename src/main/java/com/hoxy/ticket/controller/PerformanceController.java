@@ -55,6 +55,7 @@ public class PerformanceController {
 
     @DeleteMapping("/performances/{id}")
     public ResponseEntity<PerformanceDTO> deletePerformance(@PathVariable Long id) {
+        //주어진 id가 데이터베이스에 존재하는지 확인
         if(!service.existsById(id)){
             return ResponseEntity.notFound().build();
         }
